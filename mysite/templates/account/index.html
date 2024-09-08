@@ -1,0 +1,11 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block content %}
+<div class="px-5 pt-5">
+Логин: {{ user.username }}
+<form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary">Выйти из аккаунта</button>
+</form>
+</div>
+{% endblock content %}
